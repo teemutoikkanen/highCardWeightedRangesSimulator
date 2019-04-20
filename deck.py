@@ -6,10 +6,10 @@ class Deck():
 	#kortit (rank, suit), rank: 2..14, suit: 0..3 
 
 	def __init__(self):
-		self.cardList = []
-		self.generateDeck()
+		self.card_list = []
+		self.generate_deck()
 
-	def generateDeck(self):
+	def generate_deck(self):
 		deck = []
 		for suit in range(4):
 			for rank in range(2,15):
@@ -17,7 +17,7 @@ class Deck():
 				deck.append(card)
 		
 		shuffle(deck)
-		self.cardList = deck		
+		self.card_list = deck		
 		
 	
 			
@@ -25,4 +25,4 @@ class Deck():
 
 if __name__ == "__main__":
 	test = Deck()
-	print(test.cardList)
+	print(test.card_list)

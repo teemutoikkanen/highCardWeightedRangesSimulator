@@ -1,0 +1,35 @@
+
+
+25bb BvB tilanne missä SB:n strategia AI/FOLD. 
+
+ICMIZER equilibrium strategia olisi: SB shove 39%, BB calls 17.39%
+
+ICZMIER ei ilmeisesti ota huomioon paskojen korttien removalia, kun EP-BTN kipannut roskakäsiä. Mallinetaan tilannetta niin, että simuloiitiin 250k jakoa, missä 6 pelaajaa kipannut bottom 81%-rangen. Lopulla pakalla jaettiin aina BB:lle random käsikombinaatio 250000 kertaa.
+
+Tulos: BB herääkin maksurangella (17.39%) nyt 18,7% ajasta. Erotus on siis 1,7%. Siis BB herää 10% useammin (1,7%/17%) kuin mitä 17% range heräisi ilman removalia.
+
+Tutkitaan SB:n huonoimpien käsien EV:tä. SB 5 BB 10, antes 8*1. Stackit 249:
+
+EV_villain_folds = 249+10+8 = 267
+fold_freq = (1-0.187)
+
+T9o: 
+EV_villain_calls = 0.3626*250*2+6
+call_freq = 0.187
+EVtot = (1-0.187)*267+0.187*(0.3626*250*2+6) = 252.1
+
+Siis T9o olis vielä selvästi voitollinen pusku
+
+
+
+
+
+
+
+syitä miksi tämä tutkimus ei ole 100% validi:
+*softassa voi olla bugeja
+*en ota huomioon SB:lle jaettujen korttien removalia. tää kyllä onnistuis jos jaksan vielä jatkaa tätä projektia
+*en ota huomioon miten eri kombojen painoarvot eroavat toisistaan BB:n maksurangessa, korjattavissa. Siis lasken vaan "kuinka usein BB herää maksukädellä", en laske esimerkiksi mitkä kädet heräävät useammin
+
+
+
